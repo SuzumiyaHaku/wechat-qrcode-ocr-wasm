@@ -5,7 +5,7 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "dev": "webpack server --progress  --mode development --open",
+    "dev": "webpack server --progress  --mode development",
     "build": "webpack --progress  --mode production --stats-error-details && tsc -p tsconfig.json --emitDeclarationOnly",
     "build:example": "pnpm run build && cross-env EXAMPLE_ENV=example webpack --progress  --mode production --stats-error-details",
     "test": "pnpm run build && jest"
@@ -23,6 +23,11 @@
     "LICENSE",
     "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuzumiyaHaku/wechat-qrcode-wasm-ocr.git"
+  },
+  "homepage": "https://github.com/SuzumiyaHaku/wechat-qrcode-wasm-ocr",
   "exports": {
     ".": {
       "types": "./index.d.ts",

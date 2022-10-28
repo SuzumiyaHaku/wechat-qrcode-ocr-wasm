@@ -12,5 +12,5 @@
     "allowJs": true
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "src/playground/", "origin", "src/core/*.js", "src/__tests__/", "coverage"]
+  "exclude": ["node_modules", "src/playground/", "origin", "src/core", "src/__tests__/", "coverage"]
 }

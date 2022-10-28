@@ -1,7 +1,18 @@
 import { getImgQRCodeInfo } from "../index";
 
+let opt = {};
+// @ts-ignore
+// eslint-disable-next-line no-constant-condition
+
+opt = {
+  wasmBinaryFile:
+    "https://suzumiyahaku.github.io/wechat-qrcode-wasm-ocr/example/static/wasm/onlyWechatWasmFile.data",
+  wechatQRcodeFile:
+    "https://suzumiyahaku.github.io/wechat-qrcode-wasm-ocr/example/static/wasm/wechatQRcodeFile.data",
+};
 async function getCode(url: string) {
   return getImgQRCodeInfo({
+    ...opt,
     url,
     loadStatus: ({ loaded, total }) => {
       const str = `Downloading data...[${loaded}/${total}]`;
