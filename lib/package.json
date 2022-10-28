@@ -1,13 +1,13 @@
 {
   "name": "wechat-qrcode-wasm-ocr",
   "version": "0.0.1",
-  "description": "",
+  "description": "QR code OCR",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "dev": "webpack server --progress  --mode development --open",
     "build": "webpack --progress  --mode production --stats-error-details && tsc -p tsconfig.json --emitDeclarationOnly",
-    "build:example": "cross-env EXAMPLE_ENV=example webpack --progress  --mode production --stats-error-details",
+    "build:example": "pnpm run build && cross-env EXAMPLE_ENV=example webpack --progress  --mode production --stats-error-details",
     "test": "pnpm run build && jest"
   },
   "keywords": [],

@@ -7,7 +7,7 @@
 
 ## Quick Overview
 - It only works on client, because it need WebAssembly + Canvas;
-- [https://example.io/index.html](https://ww)
+- [https://example.io/index.html](https://suzumiyahaku.github.io/wechat-qrcode-wasm-ocr/example/index.html)
 
 
 ## Installation
@@ -71,7 +71,7 @@ if (input) {
 }
 ```
 ---
-#####html
+##### html
 ```html
 <!-- import JavaScript -->
 <script src="https://unpkg.com/wechat-qrcode-wasm-ocr/main.js"></script>
@@ -92,8 +92,8 @@ getCode(imgURL).then((res) => {
 });
 </script>
 ```
-
-## `getImgQRCodeInfo(options)` API
+## API
+### 1、getImgQRCodeInfo(options)
 
 options:
 |Property|type|Default|
@@ -107,7 +107,7 @@ options:
 |imgOnError?|[OnErrorEventHandlerNonNull](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement#errors)|null|
 |initError?|ErrorCallback|null|
 
-### `initError`
+#### `initError`
 `[wechat-qrcode-wasm-ocr Initialize failed]` consider the following reasons:
 - "wasmBinaryFile、wechatQRcodeFile" The file address is incorrect!
 - [webAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly)

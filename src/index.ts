@@ -31,8 +31,8 @@ export interface Source {
 }
 
 export const source = {
-  wasmBinaryFile: "/static/wasm/onlyWechatWasmFile.data",
-  wechatQRcodeFile: "/static/wasm/wechatQRcodeFile.data",
+  wasmBinaryFile: "./static/wasm/onlyWechatWasmFile.data",
+  wechatQRcodeFile: "./static/wasm/wechatQRcodeFile.data",
 };
 
 export interface HttpConfig {

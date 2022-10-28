@@ -1,17 +1,13 @@
 # wechat-qrcode-wasm-ocr
-> QR code/2d barcode generator.
-[![Travis](https://img.shields.io/travis/soldair/node-qrcode.svg?style=flat-square)](http://travis-ci.org/soldair/node-qrcode)
-[![npm](https://img.shields.io/npm/v/qrcode.svg?style=flat-square)](https://www.npmjs.com/package/qrcode)
-[![npm](https://img.shields.io/npm/dt/qrcode.svg?style=flat-square)](https://www.npmjs.com/package/qrcode)
-[![npm](https://img.shields.io/npm/l/qrcode.svg?style=flat-square)](https://github.com/soldair/node-qrcode/blob/master/license)
 
-- [Installation](#installation)
-- [Credits](#credits)
-- [License](#license)
+[![npm](https://img.shields.io/npm/v/wechat-qrcode-wasm-ocr.svg?style=flat-square)](https://www.npmjs.com/package/qrcode)
+[![npm](https://img.shields.io/npm/dt/wechat-qrcode-wasm-ocr.svg?style=flat-square)](https://www.npmjs.com/package/wechat-qrcode-wasm-ocr)
+[![npm](https://img.shields.io/npm/l/wechat-qrcode-wasm-ocr.svg?style=flat-square)](https://github.com/soldair/node-qrcode/blob/master/license)
+
 
 ## Quick Overview
 - It only works on client, because it need WebAssembly + Canvas;
-- [demo](https://ww)
+- [https://example.io/index.html](https://suzumiyahaku.github.io/wechat-qrcode-wasm-ocr/example/index.html)
 
 
 ## Installation
@@ -28,6 +24,17 @@ pnpm install -D wechat-qrcode-wasm-ocr
 ## Basic usage
 
 ##### Vue or React:
+```txt
+├── package.json
+├── pnpm-lock.yaml
+├── public
+│   ├── favicon.ico
+│   └── static
+│       └── wasm
+│           ├── onlyWechatWasmFile.data
+│           └── wechatQRcodeFile.data
+├── src
+```
 ```js
 import { getImgQRCodeInfo } from "wechat-qrcode-wasm-ocr";
 
@@ -64,7 +71,7 @@ if (input) {
 }
 ```
 ---
-#####html
+##### html
 ```html
 <!-- import JavaScript -->
 <script src="https://unpkg.com/wechat-qrcode-wasm-ocr/main.js"></script>
@@ -85,8 +92,8 @@ getCode(imgURL).then((res) => {
 });
 </script>
 ```
-
-## `getImgQRCodeInfo(options)` API
+## API
+### 1、getImgQRCodeInfo(options)
 
 options:
 |Property|type|Default|
@@ -100,10 +107,11 @@ options:
 |imgOnError?|[OnErrorEventHandlerNonNull](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement#errors)|null|
 |initError?|ErrorCallback|null|
 
-### `initError`
-Consider the following:
-- webAssembly
+#### `initError`
+`[wechat-qrcode-wasm-ocr Initialize failed]` consider the following reasons:
 - "wasmBinaryFile、wechatQRcodeFile" The file address is incorrect!
+- [webAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly)
+- [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
 
 ## Credits
