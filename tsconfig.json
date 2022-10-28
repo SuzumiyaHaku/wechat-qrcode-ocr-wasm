@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "UMD",
+    "target": "ES2020",
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "declaration": true,
+    "declarationDir": "./lib",
+    "outDir": "./lib",
+    "allowJs": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "src/playground/", "origin", "src/core/*.js", "src/__tests__/", "coverage"]
+}

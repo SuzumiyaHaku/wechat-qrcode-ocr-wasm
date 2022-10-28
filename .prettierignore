@@ -1,0 +1,7 @@
+lib/
+example/
+origin/
+static/
+coverage/
+node_modules
+src/core/*.js
