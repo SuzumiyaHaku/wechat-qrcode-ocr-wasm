@@ -73,7 +73,7 @@ if (input) {
 ##### html
 ```html
 <!-- import JavaScript -->
-<script src="https://unpkg.com/wechat-qrcode-wasm-ocr/main.js"></script>
+<script src="https://unpkg.com/wechat-qrcode-wasm-ocr/index.js"></script>
 <script>
 function getCode(url: string) { // Promise<response>
   return getImgQRCodeInfo({
