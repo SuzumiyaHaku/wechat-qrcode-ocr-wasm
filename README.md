@@ -1,8 +1,7 @@
 # wechat-qrcode-wasm-ocr
 
-[![npm](https://img.shields.io/npm/v/wechat-qrcode-wasm-ocr.svg?style=flat-square)](https://www.npmjs.com/package/qrcode)
-[![npm](https://img.shields.io/npm/dt/wechat-qrcode-wasm-ocr.svg?style=flat-square)](https://www.npmjs.com/package/wechat-qrcode-wasm-ocr)
-[![npm](https://img.shields.io/npm/l/wechat-qrcode-wasm-ocr.svg?style=flat-square)](https://github.com/soldair/node-qrcode/blob/master/license)
+[![npm](https://img.shields.io/npm/v/wechat-qrcode-wasm-ocr.svg?style=flat-square)](https://www.npmjs.com/package/wechat-qrcode-wasm-ocr)
+[![npm](https://img.shields.io/npm/l/wechat-qrcode-wasm-ocr.svg?style=flat-square)](https://github.com/SuzumiyaHaku/wechat-qrcode-wasm-ocr/blob/main/LICENSE)
 
 
 ## Quick Overview

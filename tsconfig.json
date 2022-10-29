@@ -9,8 +9,8 @@
     "declaration": true,
     "declarationDir": "./lib",
     "outDir": "./lib",
-    "allowJs": true
+    "allowJs": false
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/index.d.ts"],
   "exclude": ["node_modules", "src/playground/", "origin", "src/core", "src/__tests__/", "coverage"]
 }

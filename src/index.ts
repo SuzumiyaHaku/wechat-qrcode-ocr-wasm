@@ -2,7 +2,6 @@
 import cv from "./core/opencv.js";
 // @ts-ignore
 import { initModule } from "./core/loadingWeChatQRcodeModel.js";
-
 export interface Mat {
   $$: { ptrType: any; ptr: number; count: { value: number } };
   cols: number;
