@@ -1,8 +1,8 @@
 # wechat-qrcode-ocr-wasm
 
-[![npm](https://img.shields.io/npm/v/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://www.npmjs.com/package/wechat-qrcode-ocr-wasm)
-[![npm](https://img.shields.io/npm/l/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://github.com/SuzumiyaHaku/wechat-qrcode-ocr-wasm/blob/main/LICENSE)
+[![npm](https://img.shields.io/npm/v/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://www.npmjs.com/package/wechat-qrcode-ocr-wasm) [![npm](https://img.shields.io/npm/l/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://github.com/SuzumiyaHaku/wechat-qrcode-ocr-wasm/blob/main/LICENSE)
 
+English | [简体中文](https://github.com/SuzumiyaHaku/wechat-qrcode-ocr-wasm/blob/main/README.zh-CN.md)
 
 ## Quick Overview
 - It only works on client, because it need WebAssembly + Canvas;
@@ -11,13 +11,13 @@
 
 ## Installation
 ```yarn
-yarn add -D wechat-qrcode-ocr-wasm
+yarn add wechat-qrcode-ocr-wasm
 ```
 ```npm
-npm install -D wechat-qrcode-ocr-wasm
+npm install wechat-qrcode-ocr-wasm
 ```
 ```pnpm
-pnpm install -D wechat-qrcode-ocr-wasm
+pnpm install wechat-qrcode-ocr-wasm
 ```
 
 ## Basic usage
@@ -41,7 +41,6 @@ import img from "../assets/img/0.webp";
 
 function getCode(url: string) { // Promise<response>
   return getImgQRCodeInfo({
-
     wasmBinaryFile: "/static/wasm/onlyWechatWasmFile.data", // http://localhost:8080/static/wasm/onlyWechatWasmFile.data
     wechatQRcodeFile: "/static/wasm/wechatQRcodeFile.data", // http://localhost:8080/static/wasm/wechatQRcodeFile.data
     url, // image url or base64
@@ -63,7 +62,7 @@ if (input) {
     const url = URL.createObjectURL(
       new Blob([e.target.files[0]], { type: file.type })
     );
-    getCode(img).then((res) => {
+    getCode(url).then((res) => {
       console.log(res); // { data: ["xxxxx"], points: [[483.32, 884.18, 1444.00, 884.18, 1444.00, 1790.69, 483.32, 1790.69]] }
     });
   };
@@ -95,7 +94,7 @@ getCode(imgURL).then((res) => {
 ### 1、getImgQRCodeInfo(options)
 
 options:
-|Property|type|Default|
+|Property|Type|Default Value|
 |-------------------|------------|------------|
 |url|string|""|
 |wasmBinaryFile?|string|"/static/wasm/onlyWechatWasmFile.data"|

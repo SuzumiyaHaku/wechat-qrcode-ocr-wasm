@@ -1,7 +1,7 @@
 {
   "name": "wechat-qrcode-ocr-wasm",
-  "version": "0.0.1",
-  "description": "QR code OCR",
+  "version": "0.0.2",
+  "description": "wechat QRCode OCR(微信二维码OCR识别)",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {

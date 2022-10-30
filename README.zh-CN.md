@@ -2,14 +2,14 @@
 
 [![npm](https://img.shields.io/npm/v/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://www.npmjs.com/package/wechat-qrcode-ocr-wasm) [![npm](https://img.shields.io/npm/l/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://github.com/SuzumiyaHaku/wechat-qrcode-ocr-wasm/blob/main/LICENSE)
 
-English | [简体中文](https://github.com/SuzumiyaHaku/wechat-qrcode-ocr-wasm/blob/main/README.zh-CN.md)
+[English](https://github.com/SuzumiyaHaku/wechat-qrcode-ocr-wasm) | 简体中文
 
-## Quick Overview
-- It only works on client, because it need WebAssembly + Canvas;
-- [https://example.io/index.html](https://suzumiyahaku.github.io/wechat-qrcode-ocr-wasm/example/index.html)
+## 快速概览
+- 仅在浏览器工作，因为它基于WebAssembly + Canvas
+- [https://example.io/index.html 在线demo](https://suzumiyahaku.github.io/wechat-qrcode-ocr-wasm/example/index.html)
 
 
-## Installation
+## 安装
 ```yarn
 yarn add wechat-qrcode-ocr-wasm
 ```
@@ -20,7 +20,7 @@ npm install wechat-qrcode-ocr-wasm
 pnpm install wechat-qrcode-ocr-wasm
 ```
 
-## Basic usage
+## 基础使用
 
 ##### Vue or React:
 ```txt
@@ -43,7 +43,7 @@ function getCode(url: string) { // Promise<response>
   return getImgQRCodeInfo({
     wasmBinaryFile: "/static/wasm/onlyWechatWasmFile.data", // http://localhost:8080/static/wasm/onlyWechatWasmFile.data
     wechatQRcodeFile: "/static/wasm/wechatQRcodeFile.data", // http://localhost:8080/static/wasm/wechatQRcodeFile.data
-    url, // image url or base64
+    url, // image url 或 base64
     loadStatus: ({ loaded, total }) => {
       console.log(`Downloading data...[${loaded}/${total}]`);
     },
@@ -91,29 +91,26 @@ getCode(imgURL).then((res) => {
 </script>
 ```
 ## API
-### 1、getImgQRCodeInfo(options)
+### 1、getImgQRCodeInfo(options)配置
 
 options:
-|Property|Type|Default Value|
-|-------------------|------------|------------|
-|url|string|""|
-|wasmBinaryFile?|string|"/static/wasm/onlyWechatWasmFile.data"|
-|wechatQRcodeFile?|string|"/static/wasm/wechatQRcodeFile.data"|
-|loadStatus?|(response: { loaded: number; total: number }) => void;|null|
-|withCredentials?| [XMLHttpRequest.withCredentials](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials) |false|
-|headers?|XMLHttpRequest Headers| {}|
-|imgOnError?|[OnErrorEventHandlerNonNull](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement#errors)|null|
-|initError?|ErrorCallback|null|
+|属性|类型|默认值|描述|
+|------------|------------|------------|---|
+|url|string|""|图片 url 或 图片base64|
+|wasmBinaryFile?|string|"/static/wasm/onlyWechatWasmFile.data"||
+|wechatQRcodeFile?|string|"/static/wasm/wechatQRcodeFile.data"||
+|loadStatus?|(response: { loaded: number; total: number }) => void;|null|请求上面*.data文件加载进度的回调|
+|withCredentials?| [XMLHttpRequest.withCredentials](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials) |false|上面*.data文件请求的xhr配置|
+|headers?|XMLHttpRequest Headers| {}|上面*.data文件请求头配置|
+|imgOnError?|[OnErrorEventHandlerNonNull](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement#errors)|null|图片加载错误回调|
+|initError?|ErrorCallback|null|初始化失败的回调|
 
 #### `initError`
-`[wechat-qrcode-ocr-wasm Initialize failed]` consider the following reasons:
-- "wasmBinaryFile、wechatQRcodeFile" The file address is incorrect!
+报错`[wechat-qrcode-ocr-wasm Initialize failed]` 检查如下原因:
+- "wasmBinaryFile、wechatQRcodeFile" 的地址不对
 - [webAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly)
-- [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+- [CORS 跨域](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
-
-## Credits
-This lib is based on "OpenCV for C++" which Kazuhiko Arase thankfully MIT licensed.
 
 ## License
 [MIT](https://github.com/soldair/node-qrcode/blob/master/license)
