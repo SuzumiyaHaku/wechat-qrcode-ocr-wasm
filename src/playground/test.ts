@@ -6,9 +6,9 @@ let opt = {};
 
 opt = {
   wasmBinaryFile:
-    "https://suzumiyahaku.github.io/wechat-qrcode-wasm-ocr/example/static/wasm/onlyWechatWasmFile.data",
+    "https://suzumiyahaku.github.io/wechat-qrcode-ocr-wasm/example/static/wasm/onlyWechatWasmFile.data",
   wechatQRcodeFile:
-    "https://suzumiyahaku.github.io/wechat-qrcode-wasm-ocr/example/static/wasm/wechatQRcodeFile.data",
+    "https://suzumiyahaku.github.io/wechat-qrcode-ocr-wasm/example/static/wasm/wechatQRcodeFile.data",
 };
 async function getCode(url: string) {
   return getImgQRCodeInfo({

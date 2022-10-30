@@ -118,7 +118,7 @@ export async function getImgQRCodeInfo(
     if (options && typeof options.initError === "function") {
       options?.initError?.(e);
     } else {
-      throw "[wechat-qrcode-wasm-ocr Initialize failed]: " + e;
+      throw "[wechat-qrcode-ocr-wasm Initialize failed]: " + e;
     }
   }
 

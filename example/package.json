@@ -1,5 +1,5 @@
 {
-  "name": "wechat-qrcode-wasm-ocr",
+  "name": "wechat-qrcode-ocr-wasm",
   "version": "0.0.1",
   "description": "QR code OCR",
   "main": "index.js",
@@ -25,9 +25,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SuzumiyaHaku/wechat-qrcode-wasm-ocr.git"
+    "url": "git+https://github.com/SuzumiyaHaku/wechat-qrcode-ocr-wasm.git"
   },
-  "homepage": "https://github.com/SuzumiyaHaku/wechat-qrcode-wasm-ocr",
+  "homepage": "https://github.com/SuzumiyaHaku/wechat-qrcode-ocr-wasm",
   "exports": {
     ".": {
       "types": "./index.d.ts",

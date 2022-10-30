@@ -1,24 +1,24 @@
-# wechat-qrcode-wasm-ocr
+# wechat-qrcode-ocr-wasm
 
-[![npm](https://img.shields.io/npm/v/wechat-qrcode-wasm-ocr.svg?style=flat-square)](https://www.npmjs.com/package/qrcode)
-[![npm](https://img.shields.io/npm/dt/wechat-qrcode-wasm-ocr.svg?style=flat-square)](https://www.npmjs.com/package/wechat-qrcode-wasm-ocr)
-[![npm](https://img.shields.io/npm/l/wechat-qrcode-wasm-ocr.svg?style=flat-square)](https://github.com/soldair/node-qrcode/blob/master/license)
+[![npm](https://img.shields.io/npm/v/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://www.npmjs.com/package/qrcode)
+[![npm](https://img.shields.io/npm/dt/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://www.npmjs.com/package/wechat-qrcode-ocr-wasm)
+[![npm](https://img.shields.io/npm/l/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://github.com/soldair/node-qrcode/blob/master/license)
 
 
 ## Quick Overview
 - It only works on client, because it need WebAssembly + Canvas;
-- [https://example.io/index.html](https://suzumiyahaku.github.io/wechat-qrcode-wasm-ocr/example/index.html)
+- [https://example.io/index.html](https://suzumiyahaku.github.io/wechat-qrcode-ocr-wasm/example/index.html)
 
 
 ## Installation
 ```yarn
-yarn add -D wechat-qrcode-wasm-ocr
+yarn add -D wechat-qrcode-ocr-wasm
 ```
 ```npm
-npm install -D wechat-qrcode-wasm-ocr
+npm install -D wechat-qrcode-ocr-wasm
 ```
 ```pnpm
-pnpm install -D wechat-qrcode-wasm-ocr
+pnpm install -D wechat-qrcode-ocr-wasm
 ```
 
 ## Basic usage
@@ -36,7 +36,7 @@ pnpm install -D wechat-qrcode-wasm-ocr
 ├── src
 ```
 ```js
-import { getImgQRCodeInfo } from "wechat-qrcode-wasm-ocr";
+import { getImgQRCodeInfo } from "wechat-qrcode-ocr-wasm";
 
 import img from "../assets/img/0.webp";
 
@@ -74,12 +74,12 @@ if (input) {
 ##### html
 ```html
 <!-- import JavaScript -->
-<script src="https://unpkg.com/wechat-qrcode-wasm-ocr/main.js"></script>
+<script src="https://unpkg.com/wechat-qrcode-ocr-wasm/main.js"></script>
 <script>
 function getCode(url: string) { // Promise<response>
   return getImgQRCodeInfo({
-    wasmBinaryFile: "https://unpkg.com/wechat-qrcode-wasm-ocr/static/wasm/onlyWechatWasmFile.data",
-    wechatQRcodeFile: "https://unpkg.com/wechat-qrcode-wasm-ocr/static/wasm/wechatQRcodeFile.data",
+    wasmBinaryFile: "https://unpkg.com/wechat-qrcode-ocr-wasm/static/wasm/onlyWechatWasmFile.data",
+    wechatQRcodeFile: "https://unpkg.com/wechat-qrcode-ocr-wasm/static/wasm/wechatQRcodeFile.data",
     url,
     loadStatus: ({ loaded, total }) => {
       console.log(`Downloading data...[${loaded}/${total}]`);
@@ -108,7 +108,7 @@ options:
 |initError?|ErrorCallback|null|
 
 #### `initError`
-`[wechat-qrcode-wasm-ocr Initialize failed]` consider the following reasons:
+`[wechat-qrcode-ocr-wasm Initialize failed]` consider the following reasons:
 - "wasmBinaryFile、wechatQRcodeFile" The file address is incorrect!
 - [webAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly)
 - [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
