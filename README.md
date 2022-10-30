@@ -23,16 +23,18 @@ pnpm install wechat-qrcode-ocr-wasm
 ## Basic usage
 
 ##### Vue or React:
+copy `/node_modules/wechat-qrcode-ocr-wasm/static/wasm/*` to your static folder：
+
 ```txt
-├── package.json
-├── pnpm-lock.yaml
-├── public
-│   ├── favicon.ico
-│   └── static
-│       └── wasm
-│           ├── onlyWechatWasmFile.data
-│           └── wechatQRcodeFile.data
-├── src
+  ├── package.json
+  ├── pnpm-lock.yaml
+  ├── public
+  │   ├── favicon.ico
+  │   └── static
++ │       └── wasm
++ │           ├── onlyWechatWasmFile.data
++ │           └── wechatQRcodeFile.data
+  ├── src
 ```
 ```js
 import { getImgQRCodeInfo } from "wechat-qrcode-ocr-wasm";
