@@ -1,8 +1,7 @@
 # wechat-qrcode-ocr-wasm
 
-[![npm](https://img.shields.io/npm/v/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://www.npmjs.com/package/qrcode)
-[![npm](https://img.shields.io/npm/dt/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://www.npmjs.com/package/wechat-qrcode-ocr-wasm)
-[![npm](https://img.shields.io/npm/l/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://github.com/soldair/node-qrcode/blob/master/license)
+[![npm](https://img.shields.io/npm/v/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://www.npmjs.com/package/wechat-qrcode-ocr-wasm)
+[![npm](https://img.shields.io/npm/l/wechat-qrcode-ocr-wasm.svg?style=flat-square)](https://github.com/SuzumiyaHaku/wechat-qrcode-ocr-wasm/blob/main/LICENSE)
 
 
 ## Quick Overview
@@ -74,7 +73,7 @@ if (input) {
 ##### html
 ```html
 <!-- import JavaScript -->
-<script src="https://unpkg.com/wechat-qrcode-ocr-wasm/main.js"></script>
+<script src="https://unpkg.com/wechat-qrcode-ocr-wasm/index.js"></script>
 <script>
 function getCode(url: string) { // Promise<response>
   return getImgQRCodeInfo({
