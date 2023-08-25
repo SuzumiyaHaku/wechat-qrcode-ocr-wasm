@@ -144,6 +144,7 @@ export async function getImgQRCodeInfo(
           const temp = pointOutputArr.get(i);
           temp && points.push(Array.from<number>(temp.data32F));
         }
+        (imgdata as any)?.delete();
         resolve({
           size,
           data,
