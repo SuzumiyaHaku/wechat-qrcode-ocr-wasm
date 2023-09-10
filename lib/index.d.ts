@@ -17,6 +17,7 @@ export interface Mat {
     matSize: number[];
     rows: number;
     step: number[];
+    delete(...args: any): any;
 }
 export interface Options extends HttpConfig, Source {
     url: string;
@@ -53,16 +54,17 @@ export declare type MatVector<T, U> = {
     isDeleted(...args: any): any;
     deleteLater(...args: any): any;
 };
-export declare type WeChatQrcodeModule = OpenCVWeChatQRCode;
+export declare type detectAndDecodeType = {
+    detectAndDecode: (img: Mat, points?: MatVector<number, Mat>) => MatVector<number, string | undefined>;
+};
 export interface OpenCVWeChatQRCode {
     imread: (args: HTMLImageElement) => Mat;
-    wechat_qrcode_WeChatQRCode: new (...args: any) => {
-        detectAndDecode: (img: Mat, points?: MatVector<number, Mat>) => MatVector<number, string | undefined>;
-    };
+    wechat_qrcode_WeChatQRCode: new (...args: any) => detectAndDecodeType;
     setStatus: Required<Options["loadStatus"]>;
     MatVector: new () => MatVector<number, Mat>;
     [p: string | number | symbol]: any;
 }
+export declare type WeChatQrcodeModule = OpenCVWeChatQRCode;
 export declare const httpConfig: HttpConfig;
 export declare function wechatQRcodeWASM(options: Options): Promise<OpenCVWeChatQRCode>;
 export declare function getImgQRCodeInfo(options?: Options): Promise<{

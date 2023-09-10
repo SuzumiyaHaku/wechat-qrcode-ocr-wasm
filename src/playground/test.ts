@@ -30,14 +30,7 @@ function template(data, points, url) {
   <p><b>points: </b>${getItem(points)}
 </p>`;
 }
-
-[
-  "./assets/img/error0.webp",
-  "./assets/img/0.webp",
-  "./assets/img/1.webp",
-  "./assets/img/2.webp",
-  "./assets/img/4.png",
-].forEach(async (url) => {
+async function draw(url) {
   console.time(url);
   const { data, points } = await getCode(url);
   console.timeEnd(url);
@@ -49,7 +42,25 @@ function template(data, points, url) {
   d.innerHTML = template(data, points, url);
   // @ts-ignore
   document.getElementById("root").appendChild(d);
+}
+const urls = [
+  "./assets/img/error0.webp",
+  "./assets/img/0.webp",
+  "./assets/img/1.webp",
+  "./assets/img/2.webp",
+  "./assets/img/4.png",
+];
+urls.forEach(async (url) => {
+  draw(url);
 });
+
+const addMore = document.querySelector("#add-btn");
+// @ts-ignore
+addMore.onclick = function () {
+  for (let i = 0; i < 100; i++) {
+    urls.forEach(async (url) => draw(`${url}?img${i}`));
+  }
+};
 
 // @ts-ignore
 const upload = document.getElementById("upload");

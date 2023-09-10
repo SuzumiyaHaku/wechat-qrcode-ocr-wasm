@@ -15,6 +15,7 @@ export interface Mat {
   matSize: number[];
   rows: number;
   step: number[];
+  delete(...args: any): any;
 }
 
 export interface Options extends HttpConfig, Source {
@@ -53,20 +54,21 @@ export type MatVector<T, U> = {
   isDeleted(...args: any): any;
   deleteLater(...args: any): any;
 };
-export type WeChatQrcodeModule = OpenCVWeChatQRCode;
 
+export type detectAndDecodeType = {
+  detectAndDecode: (
+    img: Mat,
+    points?: MatVector<number, Mat>
+  ) => MatVector<number, string | undefined>;
+};
 export interface OpenCVWeChatQRCode {
   imread: (args: HTMLImageElement) => Mat;
-  wechat_qrcode_WeChatQRCode: new (...args: any) => {
-    detectAndDecode: (
-      img: Mat,
-      points?: MatVector<number, Mat>
-    ) => MatVector<number, string | undefined>;
-  };
+  wechat_qrcode_WeChatQRCode: new (...args: any) => detectAndDecodeType;
   setStatus: Required<Options["loadStatus"]>;
   MatVector: new () => MatVector<number, Mat>;
   [p: string | number | symbol]: any;
 }
+export type WeChatQrcodeModule = OpenCVWeChatQRCode;
 
 export const httpConfig: HttpConfig = {
   withCredentials: false,
@@ -93,6 +95,7 @@ export function wechatQRcodeWASM(
 const callback: ((v: OpenCVWeChatQRCode) => void)[] = [];
 
 let openCV: OpenCVWeChatQRCode = (<any>globalThis)._OPEN_CV;
+let detector: detectAndDecodeType;
 export async function getImgQRCodeInfo(
   options?: Options
 ): Promise<{ size: number; data: (string | undefined)[]; points: number[][] }> {
@@ -128,12 +131,14 @@ export async function getImgQRCodeInfo(
     img.onload = () => {
       try {
         const imgdata = openCV.imread(img);
-        const detector = new openCV.wechat_qrcode_WeChatQRCode(
-          "detect.prototxt",
-          "detect.caffemodel",
-          "sr.prototxt",
-          "sr.caffemodel"
-        );
+        if (!detector) {
+          detector = new openCV.wechat_qrcode_WeChatQRCode(
+            "detect.prototxt",
+            "detect.caffemodel",
+            "sr.prototxt",
+            "sr.caffemodel"
+          );
+        }
         const pointOutputArr = new openCV.MatVector();
         const results = detector.detectAndDecode(imgdata, pointOutputArr);
         const size = pointOutputArr.size();
@@ -144,7 +149,8 @@ export async function getImgQRCodeInfo(
           const temp = pointOutputArr.get(i);
           temp && points.push(Array.from<number>(temp.data32F));
         }
-        (imgdata as any)?.delete();
+        imgdata?.delete?.();
+        pointOutputArr?.delete?.();
         resolve({
           size,
           data,

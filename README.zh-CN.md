@@ -7,6 +7,8 @@
 ## 快速概览
 - 仅在浏览器工作，因为它基于WebAssembly + Canvas
 - [https://example.io/index.html 在线demo](https://suzumiyahaku.github.io/wechat-qrcode-ocr-wasm/example/index.html)
+- 核心是opencv 微信二维码识别的部分 打包的wasm功能
+- [opencv opencv_contrib/wechat_qrcode](https://github.com/opencv/opencv_contrib/tree/4.x/modules/wechat_qrcode)
 
 
 ## 安装
