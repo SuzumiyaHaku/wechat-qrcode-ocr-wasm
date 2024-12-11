@@ -1,6 +1,6 @@
 {
   "name": "wechat-qrcode-ocr-wasm",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "wechat QRCode OCR(微信二维码OCR识别)",
   "main": "index.js",
   "types": "index.d.ts",
@@ -8,7 +8,8 @@
     "dev": "webpack server --progress  --mode development",
     "build": "webpack --progress  --mode production --stats-error-details && tsc -p tsconfig.json --emitDeclarationOnly",
     "build:example": "pnpm run build && cross-env EXAMPLE_ENV=example webpack --progress  --mode production --stats-error-details",
-    "test": "pnpm run build && jest"
+    "test": "pnpm run build && jest",
+    "publish": "pnpm run build && cd lib && npm publish"
   },
   "author": "群里底层玩家",
   "license": "MIT",
